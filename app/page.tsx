@@ -1,4 +1,3 @@
-// app/page.tsx
 'use client';
 
 import { FormEvent, useState } from 'react';
@@ -49,7 +48,7 @@ export default function Home() {
               <text
                 x="0"
                 y="72"
-                fontFamily="var(--font-lexend)"
+                className="font-lex"
                 fontWeight="700"
                 fontSize="80"
                 fill="#ffffff"
@@ -57,15 +56,14 @@ export default function Home() {
                 r.
               </text>
             </svg>
-            <span className="font-bold text-lg sm:text-xl" style={{ fontFamily: 'var(--font-lexend)' }}>
-              Reccommend
+            <span className="font-bold text-lg sm:text-xl font-lex">
+              Recommend
             </span>
           </div>
 
           <Link
             href="#claim"
-            className="px-4 sm:px-5 py-2 rounded-lg text-sm sm:text-base font-medium shadow transition hover:brightness-110"
-            style={{ backgroundColor: '#3fa7ff' }}
+            className="inline-block px-4 sm:px-5 py-2 rounded-lg text-white text-sm sm:text-base font-medium shadow transition hover:brightness-110 bg-accent"
           >
             Get early access
           </Link>
@@ -76,11 +74,14 @@ export default function Home() {
       <main className="flex-grow">
         <section className="pt-20 sm:pt-28 lg:pt-32 pb-20 text-center">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
-            <span className="inline-block bg-[#3fa7ff20] text-[#7dd3fc] px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold mb-6">
+            <span className="inline-block bg-accent-tint text-[#7dd3fc] px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold mb-6">
               ✨ Currently in private beta
             </span>
 
-            <h1 className="text-3xl sm:text-[2.6rem] md:text-[3.3rem] lg:text-[4rem] font-bold leading-tight sm:leading-[1.15] mb-7 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h1
+              className="text-3xl sm:text-[2.6rem] md:text-[3.3rem] lg:text-[4rem] font-bold leading-tight sm:leading-[1.15] mb-7 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+              style={{ WebkitTextFillColor: 'transparent' }}
+            >
               Recommendations That Actually Matter.
             </h1>
 
@@ -94,7 +95,7 @@ export default function Home() {
               onSubmit={handleSubmit}
               className="mx-auto w-full max-w-[26rem] sm:max-w-[22rem] md:max-w-[24rem] lg:max-w-[28rem]"
             >
-              <div className="flex h-12 items-center rounded-full bg-[#1a1a1d] shadow-[0_0_0_1px_#3fa7ff30_inset] overflow-hidden">
+              <div className="flex h-12 items-center rounded-full bg-surface shadow-[0_0_0_1px_#3fa7ff30_inset] overflow-hidden">
                 <input
                   name="email"
                   type="email"
@@ -134,7 +135,7 @@ export default function Home() {
 
       {/* ░ FOOTER ░ */}
       <footer className="py-6 text-center text-gray-600 text-xs border-t border-gray-800/50">
-        <p>Built with love & AI. Curated with intention. © 2025 Reccommend</p>
+        <p>Built with love & AI. Curated with intention. © 2025 Recommend</p>
       </footer>
     </>
   );
