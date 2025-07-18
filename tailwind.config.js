@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{ts,tsx,js,jsx}',
-    './components/**/*.{ts,tsx,js,jsx}',
-    './lib/**/*.{ts,tsx,js,jsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
-      // expose your CSS‑variable colours & fonts to Tailwind
       colors: {
         accent: 'var(--accent)',
         'accent-tint': 'var(--accent-tint)',
@@ -15,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
-        lex:  ['var(--font-lexend)', 'sans-serif'],
+        lex: ['var(--font-lexend)', 'sans-serif'],
       },
     },
   },
