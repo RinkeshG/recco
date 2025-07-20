@@ -1,8 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';           // <-- make sure this exists
 import Image from 'next/image';
+
+// Conditional Supabase import to prevent build-time errors
+let supabase: any = null;
+if (typeof window !== 'undefined') {
+  import('@/lib/supabaseClient').then((module) => {
+    supabase = module.supabase;
+  });
+}
 
 export default function CreateProfile() {
   const [fullName, setFullName]   = useState('');
@@ -14,6 +21,13 @@ export default function CreateProfile() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!fullName || !username) return alert('Name & username required');
+    
+    // Check if Supabase is available
+    if (!supabase) {
+      alert('Supabase not configured. Please check your environment variables.');
+      return;
+    }
+    
     setLoading(true);
 
     let avatarUrl: string | null = null;
